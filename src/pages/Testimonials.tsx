@@ -1,0 +1,151 @@
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import PageHero from "@/components/layout/PageHero";
+import { Quote } from "lucide-react";
+
+import familyImg from "@/assets/gallery/family-mbiriri.jpg";
+import random1Img from "@/assets/gallery/random1.jpg";
+import random4Img from "@/assets/gallery/random4.jpg";
+import NicholasMangwende from "@/assets/testimonials/nicholasmangwende.jpeg";
+import NyashadzasheEGanje from "@/assets/testimonials/NyashadzasheEGanje.jpeg";
+import EffortDube from "@/assets/testimonials/effort.jpeg";
+import TungamiraiAMutambisi from "@/assets/testimonials/tunga.jpeg";
+import WellingtonManwere from "@/assets/testimonials/WellingtonManwere.jpeg";
+import Patience from "@/assets/testimonials/Patience.jpeg";
+import LindiweNyathi from "@/assets/testimonials/Lindiwe.jpeg";
+import AmandaJukes from "@/assets/testimonials/Amanda.jpeg";
+const testimonials = [
+  {
+    id: 1,
+    name: "Ps Nicholas Mangwende",
+    image: NicholasMangwende,
+    role: "Comrades Runner",
+    testimony: "Pioneering the Comrades Marathon initiative at Avondale Athletics Club affirmed that endurance is not only physical but spiritual. The journey strengthened our athletes and unified our club around purpose, resilience, and hope.",
+  },
+  {
+    id: 2,
+    name: "Tungamirai A Mutambisi",
+    image: TungamiraiAMutambisi,
+    role: "Member since 2025",
+    testimony: "I have been part of several running groups, but AAAC stands out for its values. The spiritual foundation and emphasis on character development alongside physical fitness creates a unique, wholesome environment. It's more than just a running club, it's a family.",
+  },
+  {
+    id: 3,
+    name: "Effort Dube",
+    image: EffortDube,
+    role: "Member since 2024",
+    testimony: "AAAC has been inspirational in my running journey. I am happy to be part of a running club that supports my fundamental spiritual beliefs and aligns my health goals with spiritual growth. It’s the kindness and continuous motivation for me that takes the cup on any given day",
+  },
+  {
+    id: 4,
+    name: "Nyashadzashe E Ganje",
+    image: NyashadzasheEGanje,
+    initials: "NG",
+    role: "Member since 2024",
+    testimony: "Running a full marathon once felt like a distant dream—one I never thought I could realize so soon. However, joining the AAAC club transformed that dream into reality in a timeframe I never imagined possible. The experience ignited a fire within me, not only in running but also in various other areas of my life. Im grateful for such a community",
+  },
+
+  {
+    id: 5,
+    name: "Wellington Manwere",
+    image: WellingtonManwere,
+    role: "Member since 2024",
+    testimony: "Who says peer pressure is necessarily a bad thing?” AAAC pushed me to achieve way more than I was prepared to, 21km in my very first race, where I truly suffered. But one and half years later, and I ran a marathon in exactly 5 hours! I love the influence this club has had on my life, and am so proud to be a member of such, we are changing the world, 1km at a time",
+  },
+
+  {
+    id: 6,
+    name: "Patience Milazi",
+    initials: "PM",
+    image: Patience,
+    role: "Member since 2024",
+    testimony: "Before joining AAAC, I struggled to run beyond 21km.But since joining, I've been pushed to go futher-literally! The club's support and guidance have been game changers. I've gained massive confidence in my running, and I'm proud to say I've gone from struggling with 21km to tackling full marathons. Grateful for AAAC impact on my running journey.",
+  },
+  {
+    id: 7,
+    name: "Lindiwe Nyathi",
+    initials: "LN",
+    image: LindiweNyathi,
+    role: "Member since 2024",
+    testimony: "Grateful to be part of my first ever running club,which has made me keep on wanting to be a better runner,each day. The club comes with inspiration,exposure, motivation and fellowship. I am happy to belong",
+  },
+  {
+    id: 8,
+    name: "Amanda Jukes",
+    initials: "AJ",
+    image: AmandaJukes,
+    role: "Member since 2019",
+    testimony: "Running with Avondale Athletic Club has been more than just training—it’s been a family. The encouragement, discipline, and spiritual support I receive at every session push me to be a better runner and a better person. AAAC doesn’t just build strong runners; it builds strong character",
+  },
+  /*
+    {
+      id: 9,
+      name: "Melissa Chigumba",
+      initials: "MC",
+      role: "Member since 2022",
+      testimony: "The technical knowledge I've gained from AAAC coaches has transformed my running. From proper form to nutrition advice, they've helped me run faster and injury-free. Worth every penny of membership!",
+    },
+  */
+];
+
+const Testimonials = () => {
+  return (
+    <div className="min-h-screen">
+      <Header />
+      <main className="pt-20">
+        {/* Compact Hero */}
+        <PageHero
+          title="Testimonials"
+          subtitle="Hear what our members have to say about their Avondale Adventist Athletics Club experience"
+        />
+
+        {/* Testimonials Grid */}
+        <section className="py-16 section-light">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={testimonial.id}
+                  className="card-elevated overflow-hidden opacity-0 animate-fade-up"
+                  style={{ animationDelay: `${index * 0.05}s`, animationFillMode: 'forwards' }}
+                >
+                  {testimonial.image && (
+                    <div className="h-64 overflow-hidden">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6 md:p-8">
+                    <Quote className="w-8 h-8 text-primary/20 mb-4" />
+                    <p className="text-foreground leading-relaxed mb-6">
+                      "{testimonial.testimony}"
+                    </p>
+                    <div className="flex items-center gap-4 pt-4 border-t border-border">
+                      {testimonial.initials && !testimonial.image && (
+                        <div className="w-12 h-12 rounded-full hero-gradient flex items-center justify-center">
+                          <span className="font-display font-bold text-primary-foreground">
+                            {testimonial.initials}
+                          </span>
+                        </div>
+                      )}
+                      <div>
+                        <p className="font-display font-semibold">{testimonial.name}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Testimonials;
