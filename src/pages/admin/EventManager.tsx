@@ -48,10 +48,19 @@ export default function EventManager() {
 
             if (error) throw error;
 
-            const eventsWithCount = data?.map(event => ({
-                ...event,
-                registrations: event.event_registrations?.[0]?.count || 0
-            }));
+            const eventsWithCount = data?.map(event => {
+                const eventDate = new Date(event.date);
+                const now = new Date();
+                // Set to end of day to be safe
+                eventDate.setHours(23, 59, 59, 999);
+                const isPast = eventDate < now;
+
+                return {
+                    ...event,
+                    status: isPast ? 'Past' : 'Upcoming',
+                    registrations: event.event_registrations?.[0]?.count || 0
+                };
+            });
 
             setEvents(eventsWithCount || []);
         } catch (error: any) {
@@ -185,7 +194,7 @@ export default function EventManager() {
                                         </div>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${event.status === 'Upcoming' ? 'bg-green-100 text-green-800' : 'bg-slate-100 text-slate-800'
+                                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${event.status === 'Upcoming' ? 'bg-green-100 text-green-800' : 'bg-slate-100 text-slate-500'
                                             }`}>
                                             {event.status}
                                         </span>
