@@ -23,7 +23,9 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="AAAC Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
+            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-primary/20 bg-white p-1 overflow-hidden shadow-sm">
+              <img src={logo} alt="AAAC Logo" className="w-full h-full object-contain rounded-full" />
+            </div>
             <span className="font-display font-bold text-lg text-foreground hidden md:block">Avondale Adventist Athletic Club</span>
           </Link>
 
@@ -33,11 +35,10 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  location.pathname === link.path
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${location.pathname === link.path
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
+                  }`}
               >
                 {link.name}
               </Link>
@@ -69,11 +70,10 @@ const Header = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                    location.pathname === link.path
+                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${location.pathname === link.path
                       ? "bg-primary text-primary-foreground"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </Link>

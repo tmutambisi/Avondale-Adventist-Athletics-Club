@@ -10,6 +10,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
+import sdaLogo from "@/assets/sda-logo.png";
 
 const menuItems = [
     { icon: LayoutDashboard, label: "Dashboard", href: "/admin" },
@@ -22,6 +24,14 @@ export function AdminSidebar() {
     return (
         <div className="w-64 bg-slate-900 text-white min-h-screen flex flex-col">
             <div className="p-6 border-b border-slate-800">
+                <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full border border-slate-700 overflow-hidden bg-white p-0.5">
+                        <img src={logo} alt="Logo" className="w-full h-full object-contain rounded-full" />
+                    </div>
+                    <div className="w-10 h-10 rounded-full border border-slate-700 overflow-hidden bg-white p-1">
+                        <img src={sdaLogo} alt="SDA Logo" className="w-full h-full object-contain rounded-full" />
+                    </div>
+                </div>
                 <h1 className="text-xl font-bold tracking-tight">AAAC <span className="text-primary">Admin</span></h1>
             </div>
 
