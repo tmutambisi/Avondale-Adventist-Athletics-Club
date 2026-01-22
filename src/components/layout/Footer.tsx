@@ -107,7 +107,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary/20 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Avondale Adventist Athletics Club. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Avondale Adventist Athletics Club. All rights reserved. Website developed and mantained by <a href="https://tungasonicweb.vercel.app/" target="_blank" rel="noopener noreferrer">TUNGASONIC</a></p>
         </div>
       </div>
     </footer>
