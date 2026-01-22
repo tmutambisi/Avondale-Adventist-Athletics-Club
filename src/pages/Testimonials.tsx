@@ -1,11 +1,9 @@
+import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/layout/PageHero";
-import { Quote } from "lucide-react";
-
-import familyImg from "@/assets/gallery/family-mbiriri.jpg";
-import random1Img from "@/assets/gallery/random1.jpg";
-import random4Img from "@/assets/gallery/random4.jpg";
+import { Quote, ChevronDown, ChevronUp } from "lucide-react";
+import Ivenyakore from "@/assets/testimonials/makore.jpeg";
 import NicholasMangwende from "@/assets/testimonials/nicholasmangwende.jpeg";
 import NyashadzasheEGanje from "@/assets/testimonials/NyashadzasheEGanje.jpeg";
 import EffortDube from "@/assets/testimonials/effort.jpeg";
@@ -77,16 +75,78 @@ const testimonials = [
     role: "Member since 2019",
     testimony: "Running with Avondale Athletic Club has been more than just training—it’s been a family. The encouragement, discipline, and spiritual support I receive at every session push me to be a better runner and a better person. AAAC doesn’t just build strong runners; it builds strong character",
   },
-  /*
-    {
-      id: 9,
-      name: "Melissa Chigumba",
-      initials: "MC",
-      role: "Member since 2022",
-      testimony: "The technical knowledge I've gained from AAAC coaches has transformed my running. From proper form to nutrition advice, they've helped me run faster and injury-free. Worth every penny of membership!",
-    },
-  */
+
+  {
+    id: 9,
+    name: "Iveny Makore",
+    initials: "IM",
+    image: Ivenyakore,
+    role: "Member since 2023",
+    testimony: "Joining Avondale Athletics Club has been one of the best decisions in my running journey. The club provides a welcoming and disciplined environment that motivates runners of all levels to improve consistently. Through structured training sessions, experienced coaches, and supportive teammates, my endurance, pace, and confidence have improved significantly. Beyond performance, the club fosters friendship, accountability, and a strong sense of community. Avondale Athletics Club is more than just a running club—it is a family that pushes you to be your best",
+  },
+
 ];
+
+const TestimonialCard = ({ testimonial, index }: { testimonial: any, index: number }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const maxLength = 150;
+  const isLong = testimonial.testimony.length > maxLength;
+
+  const displayTestimony = isExpanded
+    ? testimonial.testimony
+    : testimonial.testimony.slice(0, maxLength) + (isLong ? "..." : "");
+
+  return (
+    <div
+      className="card-elevated overflow-hidden opacity-0 animate-fade-up h-full flex flex-col"
+      style={{ animationDelay: `${index * 0.05}s`, animationFillMode: 'forwards' }}
+    >
+      {testimonial.image && (
+        <div className="aspect-square overflow-hidden relative group border-b border-border/50">
+          <img
+            src={testimonial.image}
+            alt={testimonial.name}
+            className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        </div>
+      )}
+      <div className="p-6 md:p-8 flex flex-col flex-grow">
+        <Quote className="w-8 h-8 text-primary/20 mb-4 flex-shrink-0" />
+        <div className="flex-grow">
+          <p className="text-foreground leading-relaxed mb-4 whitespace-pre-wrap">
+            "{displayTestimony}"
+          </p>
+          {isLong && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="text-primary font-semibold text-sm hover:underline flex items-center gap-1 mb-6 transition-colors"
+            >
+              {isExpanded ? (
+                <>Read Less <ChevronUp className="w-4 h-4" /></>
+              ) : (
+                <>Read More <ChevronDown className="w-4 h-4" /></>
+              )}
+            </button>
+          )}
+        </div>
+        <div className="flex items-center gap-4 pt-4 border-t border-border mt-auto">
+          {testimonial.initials && !testimonial.image && (
+            <div className="w-12 h-12 rounded-full hero-gradient flex items-center justify-center flex-shrink-0">
+              <span className="font-display font-bold text-primary-foreground">
+                {testimonial.initials}
+              </span>
+            </div>
+          )}
+          <div>
+            <p className="font-display font-semibold line-clamp-1">{testimonial.name}</p>
+            <p className="text-sm text-muted-foreground line-clamp-1">{testimonial.role}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Testimonials = () => {
   return (
@@ -102,42 +162,9 @@ const Testimonials = () => {
         {/* Testimonials Grid */}
         <section className="py-16 section-light">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto items-stretch">
               {testimonials.map((testimonial, index) => (
-                <div
-                  key={testimonial.id}
-                  className="card-elevated overflow-hidden opacity-0 animate-fade-up"
-                  style={{ animationDelay: `${index * 0.05}s`, animationFillMode: 'forwards' }}
-                >
-                  {testimonial.image && (
-                    <div className="h-64 overflow-hidden">
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </div>
-                  )}
-                  <div className="p-6 md:p-8">
-                    <Quote className="w-8 h-8 text-primary/20 mb-4" />
-                    <p className="text-foreground leading-relaxed mb-6">
-                      "{testimonial.testimony}"
-                    </p>
-                    <div className="flex items-center gap-4 pt-4 border-t border-border">
-                      {testimonial.initials && !testimonial.image && (
-                        <div className="w-12 h-12 rounded-full hero-gradient flex items-center justify-center">
-                          <span className="font-display font-bold text-primary-foreground">
-                            {testimonial.initials}
-                          </span>
-                        </div>
-                      )}
-                      <div>
-                        <p className="font-display font-semibold">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} />
               ))}
             </div>
           </div>
