@@ -47,7 +47,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <div className="w-11 h-11 rounded-full bg-[#1a5276] p-1.5 shadow-md ring-2 ring-primary/20 hover:ring-primary/40 transition-all">
+            <div className="w-11 h-11 rounded-full bg-[#1a5276] p-1.5 shadow-md ring-2 ring-primary/20 hover:ring-primary/40 transition-all overflow-hidden">
               <img src={sdaLogo} alt="SDA Logo" className="w-full h-full object-contain" />
             </div>
           </div>
@@ -80,7 +80,7 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border">
-                <div className="w-10 h-10 rounded-full bg-[#1a5276] p-1.5 shadow-md">
+                <div className="w-10 h-10 rounded-full bg-[#1a5276] p-1.5 shadow-md overflow-hidden">
                   <img src={sdaLogo} alt="SDA Logo" className="w-full h-full object-contain" />
                 </div>
               </div>

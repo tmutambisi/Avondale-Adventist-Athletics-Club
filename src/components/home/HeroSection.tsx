@@ -90,7 +90,7 @@ const HeroSection = () => {
             Running Together. Growing Together.
           </p>
           <p className="text-lg text-white/90 mb-10 max-w-xl mx-auto animate-fade-up stagger-2 opacity-0 drop-shadow-md">
-            A community committed to promoting healthy lifestyles and personal growth through running.
+            Dedicated to encouraging a healthy lifestyle and supporting personal development through running.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up stagger-3 opacity-0">
             <Button variant="hero" size="xl" asChild>

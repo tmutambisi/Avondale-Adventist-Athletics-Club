@@ -37,7 +37,7 @@ const About = () => {
         {/* Compact Hero */}
         <PageHero
           title="About Avondale Adventist Athletics Club"
-          subtitle="A community committed to promoting healthy lifestyles through running"
+          subtitle="A community committed to promoting healthy lifestyles through running."
         />
 
         {/* Main Content */}
@@ -48,13 +48,8 @@ const About = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
                 <div className="card-elevated p-8">
                   <h2 className="font-display font-bold text-2xl md:text-3xl mb-6">Our Mission</h2>
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    The Avondale Adventist Athletics Club (AAAC) is committed to promoting a healthy lifestyle,
-                    encouraging personal growth through running, and building camaraderie among members.
-                  </p>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    We foster an inclusive environment where everyone feels welcome and valued, regardless of
-                    running experience or background.
+                    The Avondale Adventist Athletics Club (AAAC) is dedicated to encouraging a healthy lifestyle and supporting personal development through running. We strive to create strong bonds among members, nurturing a welcoming and inclusive community where everyone—no matter their running background or experience—feels respected and valued.
                   </p>
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -102,12 +97,11 @@ const About = () => {
               <div className="card-elevated p-8 md:p-12">
                 <h2 className="font-display font-bold text-2xl md:text-3xl mb-6">Membership</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  Membership to AAAC is open to anyone who shares our passion for running and healthy living.
-                  Whether you're a seasoned marathoner or just starting your fitness journey, you're welcome here.
+                  Membership to The Avondale Adventist Athletics Club (AAAC) is open to anyone who shares our passion for running and healthy living.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Admission is through our Executive Committee. Simply reach out through our contact page,
-                  and we'll be happy to guide you through the joining process.
+                  and we will be happy to guide you through the joining process.
                 </p>
               </div>
             </div>

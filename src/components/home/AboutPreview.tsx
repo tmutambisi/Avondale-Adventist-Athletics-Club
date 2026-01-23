@@ -29,7 +29,7 @@ const AboutPreview = () => {
             About <span className="text-gradient">Avondale Adventist Athletics Club</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            The Avondale Adventist Athletics Club (AAAC) is committed to promoting a healthy lifestyle, encouraging personal growth through running, and building camaraderie among members. We foster an inclusive environment where everyone feels welcome and valued, regardless of running experience or background.
+            The Avondale Adventist Athletics Club (AAAC) is dedicated to encouraging a healthy lifestyle and supporting personal development through running. We strive to create strong bonds among members, nurturing a welcoming and inclusive community where everyone—no matter their running background or experience—feels respected and valued.
           </p>
         </div>
 
