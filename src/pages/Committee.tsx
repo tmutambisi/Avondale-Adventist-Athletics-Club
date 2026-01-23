@@ -59,7 +59,7 @@ const committeeMembers: CommitteeMember[] = [
     initials: "IC",
     image: IttaiChimwala,
     shortBio: "Oversees club finances with transparency and ensures sustainable resource management.",
-    fullBio: "Ittai Innocent Chimwala is a results-driven Accountant with a proven track record in the accounting and finance field. He brings strong analytical ability, sound decision-making, and strategic thinking to every role he undertakes. Known for his integrity and leadership skills, Ittai consistently contributes to efficient financial management and organizational growth.Beyond his professional career, Ittai is an active leader in the Seventh-day Adventist Church, serving as a young elder and demonstrating a strong commitment to service, mentorship, and ethical leadership. He is also a passionate runner who values discipline, wellness, and teamwork, and actively builds meaningful connections within the athletics community. Ittai combines professional excellence, faith-based leadership, and a healthy lifestyle to positively impact both the workplace and the wider community.",
+    fullBio: "Ittai Innocent Chimwala is a results-driven Chartered Accountant with a proven track record in the accounting and finance field. He brings strong analytical ability, sound decision-making, and strategic thinking to every role he undertakes. Known for his integrity and leadership skills, Ittai consistently contributes to efficient financial management and organizational growth.Beyond his professional career, Ittai is an active leader in the Seventh-day Adventist Church, serving as a young elder and demonstrating a strong commitment to service, mentorship, and ethical leadership. He is also a passionate runner who values discipline, wellness, and teamwork, and actively builds meaningful connections within the athletics community. Ittai combines professional excellence, faith-based leadership, and a healthy lifestyle to positively impact both the workplace and the wider community.",
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ const committeeMembers: CommitteeMember[] = [
     initials: "TS",
     image: TonderaiSena,
     shortBio: "Ensures proper governance and adherence to club constitution and procedures.",
-    fullBio: "Tonderai Sena is a partner at Premier Commercial Law Firm in Harare and an elder in the Adventist church. Within the club he serves as the Parliamentarian. His duties primarily involve ensuring the club operates within the bounds of the law, managing legal risks, and handling all legal documentation. He has a keen interest in endurance sports and trail running.",
+    fullBio: "Tonderai Sena is partner at ChimukaMafunga Commercial Attorneys, a premier advisory firm in Harare and an elder in the Adventist church. Within the club he serves as the Parliamentarian. His duties primarily involve ensuring the club operates within the bounds of the law, managing legal risks, and handling all legal documentation. He has a keen interest in endurance sports and trail running.",
   },
   {
     id: 6,

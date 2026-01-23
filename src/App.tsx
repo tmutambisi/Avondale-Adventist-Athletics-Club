@@ -10,6 +10,7 @@ import Events from "./pages/Events";
 import Stories from "./pages/Stories";
 import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
+import Awards from "./pages/Awards";
 import NotFound from "./pages/NotFound";
 
 // Admin Pages
@@ -80,6 +81,7 @@ const App = () => (
             <Route path="/stories" element={<Stories />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/awards" element={<Awards />} />
             <Route path="/login" element={<Login />} />
 
             {/* Admin Routes */}

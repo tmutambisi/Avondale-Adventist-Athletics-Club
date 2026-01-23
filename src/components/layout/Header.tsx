@@ -11,6 +11,7 @@ const navLinks = [
   { name: "Events", path: "/events" },
   { name: "Success Stories", path: "/stories" },
   { name: "Testimonials", path: "/testimonials" },
+  { name: "Awards", path: "/awards" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -36,8 +37,8 @@ const Header = () => {
                 key={link.path}
                 to={link.path}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${location.pathname === link.path
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   }`}
               >
                 {link.name}
@@ -71,8 +72,8 @@ const Header = () => {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${location.pathname === link.path
-                      ? "bg-primary text-primary-foreground"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }`}
                 >
                   {link.name}

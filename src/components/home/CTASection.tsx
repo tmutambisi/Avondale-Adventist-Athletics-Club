@@ -16,7 +16,7 @@ const CTASection = () => {
             Ready to Start Your Journey?
           </h2>
           <p className="text-xl text-background/90 mb-10">
-            Join AAAC today and become part of a supportive community that celebrates every step of your running journey.
+            Join The Avondale Adventist Athletics Club today and become part of a supportive community that celebrates every step of your running journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
