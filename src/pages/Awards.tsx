@@ -364,7 +364,7 @@ const Awards = () => {
                                 Comrades Marathon <span className="text-amber-500 italic block md:inline font-serif">Honors</span>
                             </h2>
                             <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed">
-                                A tribute to those who conquered the ultimate human race and the pioneers who led the way for our community.
+                                A tribute to our first batch of pioneers—all of whom were novices—who conquered the ultimate human race and led the way for our community.
                             </p>
                         </div>
 

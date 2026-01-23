@@ -16,10 +16,10 @@ const stories = [
   },
   {
     id: 2,
-    name: "Comrades Finishers",
+    name: "The Comrades Pioneers",
     image: comradesImg,
-    achievement: "90km Marathon Victory",
-    story: "PS Ngorima, PS Mangwende, PS Dr Mudzengi, and Elder Kondo completed the legendary Comrades Marathon.",
+    achievement: "The Ultimate Human Race",
+    story: "Our first batch of runners—all novices—who successfully conquered the 90km Comrades Marathon in South Africa.",
   },
   /*
   {

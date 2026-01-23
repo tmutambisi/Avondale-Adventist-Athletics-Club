@@ -21,13 +21,13 @@ const stories = [
   },
   {
     id: 2,
-    name: "Club Members",
+    name: "The Comrades Pioneers",
     image: comradesImg,
-    initials: "PS",
+    initials: "CP",
     achievement: "Comrades Marathon Finishers",
     event: "90km Comrades Marathon",
     date: "June 2025",
-    story: "PS Ngorima, PS Mangwende, PS Dr Mudzengi, and Elder Kondo completed the legendary 90km Comrades Marathon in South Africa. Their resilience and determination paid off as they crossed the finish line, representing AAAC with pride. Their achievement inspires us all to push beyond our limits.",
+    story: "In a historic milestone for AAAC, our first-ever batch of Comrades Marathon runners—all of whom were novices—successfully conquered the legendary 90km 'Ultimate Human Race' in South Africa. The team, representing the club with immense pride and resilience, included Elder Kondo, Ps Obert Mudzengi, Ps Robert Ngorima, Ps Nicholas Mangwende, David 'Turbo' Magwaza, Patrick Ndowa, Emmanuel Mandeya, and Polite Nsimba (recognized as our Comrades Queen). Their collective achievement serves as a powerful testament to faith, discipline, and the strength of our community.",
   },
 
   {
