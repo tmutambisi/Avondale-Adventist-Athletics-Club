@@ -69,10 +69,10 @@ const testimonials = [
   },
   {
     id: 8,
-    name: "Amanda Jukes",
+    name: "Amanda Kujeke",
     initials: "AJ",
     image: AmandaJukes,
-    role: "Member since 2019",
+    role: "Member since 2024",
     testimony: "Running with Avondale Athletic Club has been more than just training—it’s been a family. The encouragement, discipline, and spiritual support I receive at every session push me to be a better runner and a better person. AAAC doesn’t just build strong runners; it builds strong character",
   },
 

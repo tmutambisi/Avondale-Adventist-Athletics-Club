@@ -89,7 +89,7 @@ const mainAwards: AwardItem[] = [
         title: "Volunteer of the Year",
         description: "Gratitude for the selfless service behind the scenes.",
         winners: [
-            { name: "Vivian Kujeke", image: VivianImg },
+            { name: "Vivian Eliveremu", image: VivianImg },
             { name: "Amanda Kujeke", image: AmandaKujekeImg }
         ],
         category: "Volunteerism"
