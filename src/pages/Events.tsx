@@ -3,7 +3,12 @@ import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import { Calendar, MapPin, Clock, ArrowRight, Loader2, X } from "lucide-react";
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import LoopIcon from '@mui/icons-material/Loop';
+import CloseIcon from '@mui/icons-material/Close';
 import {
   Dialog,
   DialogContent,
@@ -98,7 +103,7 @@ const Events = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {isLoading ? (
                 <div className="col-span-full flex justify-center py-12">
-                  <Loader2 className="w-8 h-8 animate-spin text-primary" />
+                  <LoopIcon className="w-8 h-8 animate-spin text-primary" />
                 </div>
               ) : featuredEvents.length === 0 ? (
                 <div className="col-span-full text-center py-12 text-muted-foreground">
@@ -121,15 +126,15 @@ const Events = () => {
                     <h3 className="font-display font-bold text-xl md:text-2xl mb-3">{event.name}</h3>
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center gap-3 text-muted-foreground">
-                        <Calendar className="w-4 h-4 text-primary flex-shrink-0" />
+                        <CalendarTodayIcon className="!w-4 !h-4 text-primary flex-shrink-0" />
                         <span className="text-sm">{new Date(event.date).toLocaleDateString()}</span>
                       </div>
                       <div className="flex items-center gap-3 text-muted-foreground">
-                        <Clock className="w-4 h-4 text-primary flex-shrink-0" />
+                        <AccessTimeIcon className="!w-4 !h-4 text-primary flex-shrink-0" />
                         <span className="text-sm">{event.time}</span>
                       </div>
                       <div className="flex items-start gap-3 text-muted-foreground">
-                        <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <LocationOnIcon className="!w-4 !h-4 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-sm">{event.location}</span>
                       </div>
                     </div>
@@ -144,7 +149,7 @@ const Events = () => {
                         className="w-full rounded-full"
                         onClick={() => handleEventClick(event)}
                       >
-                        Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                        Learn More <ArrowForwardIcon className="!w-4 !h-4 ml-2" />
                       </Button>
                     )}
                   </div>
@@ -164,7 +169,7 @@ const Events = () => {
             <div className="space-y-6 max-w-4xl mx-auto">
               {isLoading ? (
                 <div className="flex justify-center py-12">
-                  <Loader2 className="w-8 h-8 animate-spin text-primary" />
+                  <LoopIcon className="w-8 h-8 animate-spin text-primary" />
                 </div>
               ) : upcomingEvents.length === 0 ? (
                 <div className="text-center py-12 text-muted-foreground">
@@ -182,15 +187,15 @@ const Events = () => {
                       <h3 className="font-display font-bold text-xl md:text-2xl mb-4">{event.name}</h3>
                       <div className="grid grid-cols-1 mb-4 gap-2">
                         <div className="flex items-center gap-3 text-muted-foreground">
-                          <Calendar className="w-5 h-5 text-primary" />
+                          <CalendarTodayIcon className="!w-5 !h-5 text-primary" />
                           <span>{new Date(event.date).toLocaleDateString()}</span>
                         </div>
                         <div className="flex items-center gap-3 text-muted-foreground">
-                          <Clock className="w-5 h-5 text-primary" />
+                          <AccessTimeIcon className="!w-5 !h-5 text-primary" />
                           <span>{event.time}</span>
                         </div>
                         <div className="flex items-center gap-3 text-muted-foreground">
-                          <MapPin className="w-5 h-5 text-primary" />
+                          <LocationOnIcon className="!w-5 !h-5 text-primary" />
                           <span>{event.location}</span>
                         </div>
                       </div>
@@ -205,7 +210,7 @@ const Events = () => {
                           className="rounded-full"
                           onClick={() => handleRegisterClick(event)}
                         >
-                          Register Now <ArrowRight className="w-4 h-4 ml-2" />
+                          Register Now <ArrowForwardIcon className="!w-4 !h-4 ml-2" />
                         </Button>
                       )}
                     </div>
@@ -230,7 +235,7 @@ const Events = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {isLoading ? (
                 <div className="col-span-full flex justify-center py-12">
-                  <Loader2 className="w-8 h-8 animate-spin text-primary" />
+                  <LoopIcon className="w-8 h-8 animate-spin text-primary" />
                 </div>
               ) : pastEvents.length === 0 ? (
                 <div className="col-span-full text-center py-12 text-muted-foreground">
@@ -253,7 +258,7 @@ const Events = () => {
                   <div className="p-6">
                     <h3 className="font-display font-bold text-lg mb-2">{event.name}</h3>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                      <Calendar className="w-4 h-4" />
+                      <CalendarTodayIcon className="!w-4 !h-4" />
                       <span>{new Date(event.date).toLocaleDateString()}</span>
                     </div>
                     <p className="text-muted-foreground text-sm line-clamp-3">{event.description}</p>
@@ -286,7 +291,7 @@ const Events = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-6 rounded-xl border border-slate-100">
                     <div className="flex items-center gap-3 text-slate-700 font-medium">
                       <div className="p-2 bg-white rounded-lg shadow-sm">
-                        <Calendar className="w-5 h-5 text-primary" />
+                        <CalendarTodayIcon className="!w-5 !h-5 text-primary" />
                       </div>
                       <div className="flex flex-col">
                         <span className="text-[10px] uppercase text-slate-400 font-bold tracking-wider">Date</span>
@@ -296,7 +301,7 @@ const Events = () => {
 
                     <div className="flex items-center gap-3 text-slate-700 font-medium">
                       <div className="p-2 bg-white rounded-lg shadow-sm">
-                        <Clock className="w-5 h-5 text-primary" />
+                        <AccessTimeIcon className="!w-5 !h-5 text-primary" />
                       </div>
                       <div className="flex flex-col">
                         <span className="text-[10px] uppercase text-slate-400 font-bold tracking-wider">Time</span>
@@ -306,7 +311,7 @@ const Events = () => {
 
                     <div className="flex items-center gap-3 text-slate-700 font-medium">
                       <div className="p-2 bg-white rounded-lg shadow-sm">
-                        <MapPin className="w-5 h-5 text-primary" />
+                        <LocationOnIcon className="!w-5 !h-5 text-primary" />
                       </div>
                       <div className="flex flex-col">
                         <span className="text-[10px] uppercase text-slate-400 font-bold tracking-wider">Location</span>

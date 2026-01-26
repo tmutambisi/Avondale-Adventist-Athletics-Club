@@ -1,12 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
-import {
-    LayoutDashboard,
-    Calendar,
-    LogOut,
-    Settings,
-    Users,
-    MessageSquare
-} from "lucide-react";
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import LogoutIcon from '@mui/icons-material/Logout';
+import SettingsIcon from '@mui/icons-material/Settings';
+import PeopleIcon from '@mui/icons-material/People';
+import MessageIcon from '@mui/icons-material/Message';
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
@@ -14,8 +12,8 @@ import logo from "@/assets/logo.png";
 import sdaLogo from "@/assets/sda-logo.png";
 
 const menuItems = [
-    { icon: LayoutDashboard, label: "Dashboard", href: "/admin" },
-    { icon: Calendar, label: "Events", href: "/admin/events" },
+    { icon: DashboardIcon, label: "Dashboard", href: "/admin" },
+    { icon: CalendarTodayIcon, label: "Events", href: "/admin/events" },
 ];
 
 export function AdminSidebar() {
@@ -61,7 +59,7 @@ export function AdminSidebar() {
                     to="/settings"
                     className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
                 >
-                    <Settings className="w-5 h-5" />
+                    <SettingsIcon className="!w-5 !h-5" />
                     <span className="font-medium">Settings</span>
                 </Link>
                 <button
@@ -71,7 +69,7 @@ export function AdminSidebar() {
                         window.location.href = "/";
                     }}
                 >
-                    <LogOut className="w-5 h-5" />
+                    <LogoutIcon className="!w-5 !h-5" />
                     <span className="font-medium">Logout</span>
                 </button>
             </div>

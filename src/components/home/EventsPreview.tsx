@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Clock, ArrowRight, Loader2 } from "lucide-react";
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import LoopIcon from '@mui/icons-material/Loop';
 import {
   Dialog,
   DialogContent,
@@ -77,7 +81,7 @@ const EventsPreview = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 justify-center">
           {isLoading ? (
             <div className="col-start-1 md:col-start-1 lg:col-start-2 flex justify-center py-12">
-              <Loader2 className="w-8 h-8 animate-spin text-primary" />
+              <LoopIcon className="w-8 h-8 animate-spin text-primary" />
             </div>
           ) : events.length === 0 ? (
             <div className="col-start-1 md:col-start-1 lg:col-start-2 text-center py-12 text-muted-foreground italic">
@@ -96,20 +100,25 @@ const EventsPreview = () => {
                   alt={event.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                {event.is_featured && (
+                  <div className="absolute top-4 left-4 bg-saffron text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg z-10">
+                    Featured
+                  </div>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="font-display font-bold text-xl mb-4 group-hover:text-primary transition-colors">{event.name}</h3>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3 text-muted-foreground">
-                    <Calendar className="w-4 h-4 text-primary" />
+                    <CalendarTodayIcon className="!w-4 !h-4 text-primary" />
                     <span className="text-sm">{new Date(event.date).toLocaleDateString()}</span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
-                    <Clock className="w-4 h-4 text-primary" />
+                    <AccessTimeIcon className="!w-4 !h-4 text-primary" />
                     <span className="text-sm">{event.time}</span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
-                    <MapPin className="w-4 h-4 text-primary" />
+                    <LocationOnIcon className="!w-4 !h-4 text-primary" />
                     <span className="text-sm">{event.location}</span>
                   </div>
                 </div>
@@ -122,7 +131,7 @@ const EventsPreview = () => {
                     handleEventClick(event);
                   }}
                 >
-                  Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                  Learn More <ArrowForwardIcon className="!w-4 !h-4 ml-2" />
                 </Button>
               </div>
             </div>
@@ -157,7 +166,7 @@ const EventsPreview = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-6 rounded-xl border border-slate-100">
                   <div className="flex items-center gap-3 text-slate-700 font-medium">
                     <div className="p-2 bg-white rounded-lg shadow-sm">
-                      <Calendar className="w-5 h-5 text-primary" />
+                      <CalendarTodayIcon className="!w-5 !h-5 text-primary" />
                     </div>
                     <div className="flex flex-col">
                       <span className="text-[10px] uppercase text-slate-400 font-bold tracking-wider">Date</span>
@@ -167,7 +176,7 @@ const EventsPreview = () => {
 
                   <div className="flex items-center gap-3 text-slate-700 font-medium">
                     <div className="p-2 bg-white rounded-lg shadow-sm">
-                      <Clock className="w-5 h-5 text-primary" />
+                      <AccessTimeIcon className="!w-5 !h-5 text-primary" />
                     </div>
                     <div className="flex flex-col">
                       <span className="text-[10px] uppercase text-slate-400 font-bold tracking-wider">Time</span>
@@ -177,7 +186,7 @@ const EventsPreview = () => {
 
                   <div className="flex items-center gap-3 text-slate-700 font-medium">
                     <div className="p-2 bg-white rounded-lg shadow-sm">
-                      <MapPin className="w-5 h-5 text-primary" />
+                      <LocationOnIcon className="!w-5 !h-5 text-primary" />
                     </div>
                     <div className="flex flex-col">
                       <span className="text-[10px] uppercase text-slate-400 font-bold tracking-wider">Location</span>

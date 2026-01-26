@@ -6,7 +6,13 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import { supabase } from "@/lib/supabase";
-import { Loader2, User, Mail, Phone, Building2, Trash2, Download } from "lucide-react";
+import LoopIcon from '@mui/icons-material/Loop';
+import PersonIcon from '@mui/icons-material/Person';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import CorporateFareIcon from '@mui/icons-material/CorporateFare';
+import DeleteIcon from '@mui/icons-material/Delete';
+import DownloadIcon from '@mui/icons-material/Download';
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
@@ -113,7 +119,7 @@ export function ParticipantList({ event, isOpen, onClose }: ParticipantListProps
                             className="gap-2 text-xs h-8"
                             onClick={exportToCSV}
                         >
-                            <Download className="w-3.5 h-3.5" />
+                            <DownloadIcon className="!w-3.5 !h-3.5" />
                             Export Excel
                         </Button>
                     )}
@@ -122,7 +128,7 @@ export function ParticipantList({ event, isOpen, onClose }: ParticipantListProps
                 <div className="flex-1 overflow-y-auto pt-4">
                     {loading ? (
                         <div className="flex flex-col items-center justify-center py-20 gap-3">
-                            <Loader2 className="w-8 h-8 animate-spin text-primary" />
+                            <LoopIcon className="!w-8 !h-8 animate-spin text-primary" />
                             <p className="text-sm text-slate-500">Loading registrations...</p>
                         </div>
                     ) : participants.length === 0 ? (
@@ -138,21 +144,21 @@ export function ParticipantList({ event, isOpen, onClose }: ParticipantListProps
                                 >
                                     <div className="space-y-1">
                                         <div className="flex items-center gap-2 font-bold text-slate-900 border-b border-slate-200/50 pb-1 mb-2">
-                                            <User className="w-4 h-4 text-primary" />
+                                            <PersonIcon className="!w-4 !h-4 text-primary" />
                                             {p.full_name}
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-slate-600">
                                             <div className="flex items-center gap-2">
-                                                <Mail className="w-3.5 h-3.5 text-slate-400" />
+                                                <EmailIcon className="!w-3.5 !h-3.5 text-slate-400" />
                                                 <a href={`mailto:${p.email}`} className="hover:text-primary transition-colors">{p.email}</a>
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <Phone className="w-3.5 h-3.5 text-slate-400" />
+                                                <PhoneIcon className="!w-3.5 !h-3.5 text-slate-400" />
                                                 <a href={`tel:${p.phone}`} className="hover:text-primary transition-colors">{p.phone}</a>
                                             </div>
                                             {p.club_name && (
                                                 <div className="flex items-center gap-2 md:col-span-2">
-                                                    <Building2 className="w-3.5 h-3.5 text-slate-400" />
+                                                    <CorporateFareIcon className="!w-3.5 !h-3.5 text-slate-400" />
                                                     <span className="font-medium">{p.club_name}</span>
                                                 </div>
                                             )}
@@ -164,7 +170,7 @@ export function ParticipantList({ event, isOpen, onClose }: ParticipantListProps
                                         className="text-red-400 hover:text-red-600 hover:bg-red-50"
                                         onClick={() => handleDelete(p.id)}
                                     >
-                                        <Trash2 className="w-4 h-4" />
+                                        <DeleteIcon className="!w-4 !h-4" />
                                     </Button>
                                 </div>
                             ))}

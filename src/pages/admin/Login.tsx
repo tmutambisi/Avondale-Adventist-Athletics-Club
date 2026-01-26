@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
-import { Loader2, Eye, EyeOff } from "lucide-react";
+import LoopIcon from '@mui/icons-material/Loop';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import logo from "@/assets/logo.png";
 import sdaLogo from "@/assets/sda-logo.png";
 
@@ -106,9 +108,9 @@ export default function Login() {
                                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                                 >
                                     {showPassword ? (
-                                        <EyeOff className="h-4 w-4" />
+                                        <VisibilityOffIcon className="!h-4 !w-4" />
                                     ) : (
-                                        <Eye className="h-4 w-4" />
+                                        <VisibilityIcon className="!h-4 !w-4" />
                                     )}
                                 </button>
                             </div>
@@ -116,7 +118,7 @@ export default function Login() {
                         <Button className="w-full" type="submit" disabled={loading}>
                             {loading ? (
                                 <>
-                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                    <LoopIcon className="!mr-2 !h-4 !w-4 animate-spin" />
                                     Processing...
                                 </>
                             ) : (

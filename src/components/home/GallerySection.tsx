@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ArrowRight, X } from "lucide-react";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import CloseIcon from '@mui/icons-material/Close';
 import { Link } from "react-router-dom";
 
 // Importing images
@@ -63,7 +64,7 @@ const GallerySection = () => {
                         className="group flex items-center gap-2 text-primary font-semibold hover:text-accent transition-colors"
                     >
                         View All Stories
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowForwardIcon className="!w-4 !h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>
 
@@ -102,7 +103,7 @@ const GallerySection = () => {
                         className="absolute top-4 right-4 text-white hover:text-accent transition-colors"
                         onClick={() => setSelectedImage(null)}
                     >
-                        <X className="w-8 h-8" />
+                        <CloseIcon className="!w-8 !h-8" />
                     </button>
                     <img
                         src={selectedImage}

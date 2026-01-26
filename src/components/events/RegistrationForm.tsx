@@ -22,7 +22,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
-import { Loader2, CheckCircle2 } from "lucide-react";
+import LoopIcon from '@mui/icons-material/Loop';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const formSchema = z.object({
     full_name: z.string().min(2, "Full name must be at least 2 characters"),
@@ -95,7 +96,7 @@ export function RegistrationForm({ event, isOpen, onClose }: RegistrationFormPro
                 {isSuccess ? (
                     <div className="py-8 flex flex-col items-center text-center space-y-4">
                         <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center animate-bounce">
-                            <CheckCircle2 className="w-10 h-10" />
+                            <CheckCircleIcon className="!w-10 !h-10" />
                         </div>
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-slate-900">Registration Successful!</h3>
@@ -182,7 +183,7 @@ export function RegistrationForm({ event, isOpen, onClose }: RegistrationFormPro
                                     <Button type="submit" disabled={isSubmitting} className="min-w-[120px]">
                                         {isSubmitting ? (
                                             <>
-                                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                                <LoopIcon className="!mr-2 !h-4 !w-4 animate-spin" />
                                                 Registering...
                                             </>
                                         ) : (

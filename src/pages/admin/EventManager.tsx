@@ -1,14 +1,14 @@
 import { useState } from "react";
-import {
-    Plus,
-    Search,
-    MoreVertical,
-    Edit2,
-    Trash2,
-    Eye,
-    Calendar as CalendarIcon,
-    MapPin
-} from "lucide-react";
+import AddIcon from '@mui/icons-material/Add';
+import SearchIcon from '@mui/icons-material/Search';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import PeopleIcon from '@mui/icons-material/People';
+import LoopIcon from '@mui/icons-material/Loop';
 import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
@@ -21,7 +21,6 @@ import { EventForm } from "@/components/admin/EventForm";
 import { ParticipantList } from "@/components/admin/ParticipantList";
 import { supabase } from "@/lib/supabase";
 import { useEffect } from "react";
-import { Loader2, Users } from "lucide-react";
 
 
 
@@ -134,14 +133,14 @@ export default function EventManager() {
                     <p className="text-slate-500 mt-1">Create, edit and manage your club events.</p>
                 </div>
                 <Button className="gap-2" onClick={() => setIsFormOpen(true)}>
-                    <Plus className="w-4 h-4" /> Add New Event
+                    <AddIcon className="!w-4 !h-4" /> Add New Event
                 </Button>
             </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
                 <div className="p-4 border-b border-slate-100 bg-slate-50/50">
                     <div className="relative max-w-sm">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                        <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 !w-4 !h-4 text-slate-400" />
                         <input
                             type="text"
                             placeholder="Search events..."
@@ -167,7 +166,7 @@ export default function EventManager() {
                             {isLoading ? (
                                 <tr>
                                     <td colSpan={5} className="px-6 py-12 text-center">
-                                        <Loader2 className="w-8 h-8 animate-spin mx-auto text-primary" />
+                                        <LoopIcon className="!w-8 !h-8 animate-spin mx-auto text-primary" />
                                         <p className="text-sm text-slate-500 mt-2">Loading events...</p>
                                     </td>
                                 </tr>
@@ -185,11 +184,11 @@ export default function EventManager() {
                                     </td>
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-2 text-sm text-slate-600">
-                                            <CalendarIcon className="w-4 h-4" />
+                                            <CalendarTodayIcon className="!w-4 !h-4" />
                                             {new Date(event.date).toLocaleDateString()}
                                         </div>
                                         <div className="flex items-center gap-2 text-sm text-slate-500 mt-1">
-                                            <MapPin className="w-4 h-4" />
+                                            <LocationOnIcon className="!w-4 !h-4" />
                                             {event.location}
                                         </div>
                                     </td>
@@ -206,7 +205,7 @@ export default function EventManager() {
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>
                                                 <Button variant="ghost" size="icon">
-                                                    <MoreVertical className="w-4 h-4" />
+                                                    <MoreVertIcon className="!w-4 !h-4" />
                                                 </Button>
                                             </DropdownMenuTrigger>
                                             <DropdownMenuContent align="end" className="w-40">
@@ -214,7 +213,7 @@ export default function EventManager() {
                                                     className="gap-2 cursor-pointer"
                                                     onClick={() => window.open(`/events`, '_blank')}
                                                 >
-                                                    <Eye className="w-4 h-4" /> View Public
+                                                    <VisibilityIcon className="!w-4 !h-4" /> View Public
                                                 </DropdownMenuItem>
                                                 <DropdownMenuItem
                                                     className="gap-2 cursor-pointer"
@@ -223,19 +222,19 @@ export default function EventManager() {
                                                         setIsParticipantsOpen(true);
                                                     }}
                                                 >
-                                                    <Users className="w-4 h-4" /> View Participants
+                                                    <PeopleIcon className="!w-4 !h-4" /> View Participants
                                                 </DropdownMenuItem>
                                                 <DropdownMenuItem
                                                     className="gap-2 cursor-pointer"
                                                     onClick={() => openEditForm(event)}
                                                 >
-                                                    <Edit2 className="w-4 h-4" /> Edit Event
+                                                    <EditIcon className="!w-4 !h-4" /> Edit Event
                                                 </DropdownMenuItem>
                                                 <DropdownMenuItem
                                                     className="gap-2 cursor-pointer text-red-600 focus:text-red-600"
                                                     onClick={() => handleDelete(event.id)}
                                                 >
-                                                    <Trash2 className="w-4 h-4" /> Delete Event
+                                                    <DeleteIcon className="!w-4 !h-4" /> Delete Event
                                                 </DropdownMenuItem>
                                             </DropdownMenuContent>
                                         </DropdownMenu>

@@ -2,7 +2,10 @@ import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/layout/PageHero";
-import { Crown, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 // Leadership/Committee Images
 import ElderKondo from "@/assets/leadership/ElderKondo.jpg";
@@ -34,6 +37,7 @@ import VivianImg from "@/assets/Awards/Vivian.jpg";
 import AmandaKujekeImg from "@/assets/Awards/AmandaKujeke.jpg";
 import MicheleNyandoro from "@/assets/Awards/MichelleNyandoro.jpg";
 import PatienceImg from "@/assets/Awards/Patience.jpeg";
+import Edson from "@/assets/Awards/edson.jpeg";
 
 
 interface Winner {
@@ -82,7 +86,7 @@ const mainAwards: AwardItem[] = [
     {
         title: "Fastest Time Award",
         description: "Rewarding the most impressive speed and course records.",
-        winners: [{ name: "Edson Nyadembera" }],
+        winners: [{ name: "Edson Nyadembera", image: Edson }],
         category: "Speed"
     },
     {
@@ -249,14 +253,14 @@ const AwardCard = ({ award }: { award: AwardItem }) => {
                             className="p-2 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-white hover:bg-primary transition-colors shadow-lg active:scale-95"
                             aria-label="Previous recipient"
                         >
-                            <ChevronLeft className="w-6 h-6" />
+                            <ChevronLeftIcon className="!w-6 !h-6" />
                         </button>
                         <button
                             onClick={(e) => { e.stopPropagation(); nextWinner(); }}
                             className="p-2 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-white hover:bg-primary transition-colors shadow-lg active:scale-95"
                             aria-label="Next recipient"
                         >
-                            <ChevronRight className="w-6 h-6" />
+                            <ChevronRightIcon className="!w-6 !h-6" />
                         </button>
                     </div>
                 )}
@@ -384,7 +388,7 @@ const Awards = () => {
                                                 />
                                             </div>
                                             <div className="absolute -bottom-2 -right-2 bg-amber-500 text-slate-900 p-3 rounded-full shadow-lg">
-                                                <Crown className="w-6 h-6" />
+                                                <MilitaryTechIcon className="!w-6 !h-6" />
                                             </div>
                                         </div>
 
@@ -441,7 +445,7 @@ const Awards = () => {
                                 </div>
 
                                 <div className="mt-12 p-8 rounded-2xl bg-white/5 border border-white/5 italic text-slate-400 font-light text-center relative overflow-hidden">
-                                    <Quote className="absolute -top-4 -left-4 w-12 h-12 text-white/5 -rotate-12" />
+                                    <FormatQuoteIcon className="absolute -top-4 -left-4 !w-12 !h-12 text-white/5 -rotate-12" />
                                     "To the pioneers who lead with discipline and finished with pride, inspiring every member of Avondale Athletics to reach for their own Comrades victory."
                                 </div>
                             </div>

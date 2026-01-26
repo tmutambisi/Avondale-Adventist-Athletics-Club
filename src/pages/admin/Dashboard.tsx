@@ -1,10 +1,8 @@
-import {
-    Users,
-    Calendar,
-    TrendingUp,
-    Eye,
-    Loader2
-} from "lucide-react";
+import PeopleIcon from '@mui/icons-material/People';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import LoopIcon from '@mui/icons-material/Loop';
 import {
     XAxis,
     YAxis,
@@ -27,7 +25,7 @@ const StatCard = ({ title, value, icon: Icon, loading }: any) => (
         </div>
         <p className="text-sm font-medium text-slate-500">{title}</p>
         <h3 className="text-2xl font-bold text-slate-900 mt-1">
-            {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : value}
+            {loading ? <LoopIcon className="!w-4 !h-4 animate-spin" /> : value}
         </h3>
     </div>
 );
@@ -112,10 +110,10 @@ export default function Dashboard() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <StatCard title="Total Visits" value={stats.totalVisits.toLocaleString()} icon={Eye} loading={stats.loading} />
-                <StatCard title="Upcoming Events" value={stats.upcomingEvents} icon={Calendar} loading={stats.loading} />
-                <StatCard title="Total Registrations" value={stats.totalRegistrations} icon={Users} loading={stats.loading} />
-                <StatCard title="Daily Avg Visits" value={stats.avgVisitCount} icon={TrendingUp} loading={stats.loading} />
+                <StatCard title="Total Visits" value={stats.totalVisits.toLocaleString()} icon={VisibilityIcon} loading={stats.loading} />
+                <StatCard title="Upcoming Events" value={stats.upcomingEvents} icon={CalendarTodayIcon} loading={stats.loading} />
+                <StatCard title="Total Registrations" value={stats.totalRegistrations} icon={PeopleIcon} loading={stats.loading} />
+                <StatCard title="Daily Avg Visits" value={stats.avgVisitCount} icon={TrendingUpIcon} loading={stats.loading} />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -124,7 +122,7 @@ export default function Dashboard() {
                     <div className="h-[300px] w-full">
                         {stats.loading ? (
                             <div className="h-full w-full flex items-center justify-center">
-                                <Loader2 className="w-8 h-8 animate-spin text-primary" />
+                                <LoopIcon className="!w-8 !h-8 animate-spin text-primary" />
                             </div>
                         ) : (
                             <ResponsiveContainer width="100%" height="100%">
@@ -170,14 +168,14 @@ export default function Dashboard() {
                     <div className="space-y-6">
                         {stats.loading ? (
                             <div className="flex justify-center py-10">
-                                <Loader2 className="w-6 h-6 animate-spin text-slate-300" />
+                                <LoopIcon className="!w-6 !h-6 animate-spin text-slate-300" />
                             </div>
                         ) : stats.recentActivities.length === 0 ? (
                             <p className="text-sm text-slate-400 italic text-center py-10">No recent activity</p>
                         ) : stats.recentActivities.map((activity, i) => (
                             <div key={i} className="flex gap-4">
                                 <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
-                                    <Calendar className="w-5 h-5 text-slate-500" />
+                                    <CalendarTodayIcon className="!w-5 !h-5 text-slate-500" />
                                 </div>
                                 <div>
                                     <p className="text-sm font-semibold text-slate-900">"{activity.name}" added</p>

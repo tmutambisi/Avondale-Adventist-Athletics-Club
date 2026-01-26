@@ -24,7 +24,7 @@ import { useVisitTracker } from "./hooks/useVisitTracker";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Navigate } from "react-router-dom";
-import { Loader2 } from "lucide-react";
+import LoopIcon from '@mui/icons-material/Loop';
 
 const queryClient = new QueryClient();
 
@@ -48,7 +48,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+        <LoopIcon className="w-8 h-8 animate-spin text-primary" />
       </div>
     );
   }

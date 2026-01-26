@@ -2,7 +2,10 @@ import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/layout/PageHero";
-import { Award, Calendar, ChevronDown, ChevronUp } from "lucide-react";
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 import awardImg from "@/assets/gallery/award.jpg";
 import Williams from "@/assets/testimonials/williams.jpeg";
@@ -107,12 +110,12 @@ const StoryCard = ({ story, index }: { story: any, index: number }) => {
           <div>
             <h3 className="font-display font-bold text-xl md:text-2xl mb-1">{story.name}</h3>
             <div className="flex items-center gap-2 text-accent mb-1">
-              <Award className="w-4 h-4" />
+              <EmojiEventsIcon className="!w-4 !h-4" />
               <span className="font-medium">{story.achievement}</span>
             </div>
             {story.event && story.date && (
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="w-4 h-4" />
+                <CalendarTodayIcon className="!w-4 !h-4" />
                 <span>{story.event} • {story.date}</span>
               </div>
             )}
@@ -129,9 +132,9 @@ const StoryCard = ({ story, index }: { story: any, index: number }) => {
               className="text-primary font-semibold text-sm hover:underline flex items-center gap-1 mb-4 transition-colors"
             >
               {isExpanded ? (
-                <>Read Less <ChevronUp className="w-4 h-4" /></>
+                <>Read Less <ExpandLessIcon className="!w-4 !h-4" /></>
               ) : (
-                <>Read More <ChevronDown className="w-4 h-4" /></>
+                <>Read More <ExpandMoreIcon className="!w-4 !h-4" /></>
               )}
             </button>
           )}

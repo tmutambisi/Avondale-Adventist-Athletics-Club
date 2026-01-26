@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import hero1 from "@/assets/hero/hero-1.jpg";
-import hero2 from "@/assets/hero/hero-2.jpg";
+import hero2 from "@/assets/hero/socks.jpg";
 import hero3 from "@/assets/hero/zbhero.jpeg";
 import hero4 from "@/assets/hero/hero-4.jpg";
 
@@ -53,14 +54,14 @@ const HeroSection = () => {
         className="absolute left-4 md:left-8 z-20 p-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm transition-all hover:scale-110"
         aria-label="Previous image"
       >
-        <ChevronLeft className="w-6 h-6 text-white" />
+        <ChevronLeftIcon className="!w-6 !h-6 text-white" />
       </button>
       <button
         onClick={goToNext}
         className="absolute right-4 md:right-8 z-20 p-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm transition-all hover:scale-110"
         aria-label="Next image"
       >
-        <ChevronRight className="w-6 h-6 text-white" />
+        <ChevronRightIcon className="!w-6 !h-6 text-white" />
       </button>
 
       {/* Carousel Indicators */}

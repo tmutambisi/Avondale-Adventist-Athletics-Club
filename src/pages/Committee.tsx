@@ -2,7 +2,8 @@ import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/layout/PageHero";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ElderKondo from "@/assets/leadership/ElderKondo.jpg";
 import NyaryMoyo from "@/assets/leadership/Nyary.jpeg";
 import VimbaiMakamure from "@/assets/leadership/Vimbai.jpeg";
@@ -162,11 +163,11 @@ const MemberCard = ({ member }: { member: CommitteeMember }) => {
         >
           {isExpanded ? (
             <>
-              Read Less <ChevronUp className="w-4 h-4" />
+              Read Less <ExpandLessIcon className="!w-4 !h-4" />
             </>
           ) : (
             <>
-              Read More <ChevronDown className="w-4 h-4" />
+              Read More <ExpandMoreIcon className="!w-4 !h-4" />
             </>
           )}
         </button>

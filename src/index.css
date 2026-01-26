@@ -12,6 +12,10 @@
     --light-blue: 195 70% 95%;
     --orange: 25 95% 55%;
     --orange-hover: 25 95% 48%;
+    --geebung: 35 77% 49%;
+    --matisse: 203 75% 38%;
+    --pearl-bush: 30 18% 86%;
+    --saffron: 47 94% 58%;
 
     /* Semantic Tokens */
     --background: 0 0% 100%;
@@ -83,6 +87,10 @@
     --border: 210 20% 20%;
     --input: 210 20% 20%;
     --ring: 180 70% 45%;
+    --geebung: 35 77% 55%;
+    --matisse: 203 75% 45%;
+    --pearl-bush: 30 15% 20%;
+    --saffron: 47 94% 65%;
   }
 }
 

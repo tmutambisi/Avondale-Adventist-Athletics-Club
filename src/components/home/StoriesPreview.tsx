@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Award } from "lucide-react";
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 import awardImg from "@/assets/gallery/award.jpg";
 import comradesImg from "@/assets/gallery/comrades.jpeg";
@@ -62,7 +62,7 @@ const StoriesPreview = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 text-accent mb-2">
-                  <Award className="w-4 h-4" />
+                  <EmojiEventsIcon className="!w-4 !h-4" />
                   <span className="text-sm font-medium">{story.achievement}</span>
                 </div>
                 <h3 className="font-display font-bold text-lg mb-2">{story.name}</h3>

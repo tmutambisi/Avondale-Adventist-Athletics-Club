@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Quote } from "lucide-react";
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 import familyImg from "@/assets/gallery/family-mbiriri.jpg";
 import random1Img from "@/assets/gallery/random1.jpg";
@@ -38,15 +38,15 @@ const TestimonialsPreview = () => {
               style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
             >
               <div className="relative h-52 overflow-hidden">
-                <img 
-                  src={testimonial.image} 
+                <img
+                  src={testimonial.image}
                   alt={testimonial.name}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               </div>
               <div className="p-8">
-                <Quote className="w-10 h-10 text-primary/20 mb-4" />
+                <FormatQuoteIcon className="!w-10 !h-10 text-primary/20 mb-4" />
                 <p className="text-foreground text-lg leading-relaxed mb-6">
                   "{testimonial.testimony}"
                 </p>

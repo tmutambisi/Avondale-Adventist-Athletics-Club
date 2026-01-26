@@ -1,29 +1,32 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/layout/PageHero";
-import { Target, Users, Share2, Shield } from "lucide-react";
+import TrackChangesIcon from '@mui/icons-material/TrackChanges';
+import PeopleIcon from '@mui/icons-material/People';
+import ShareIcon from '@mui/icons-material/Share';
+import SecurityIcon from '@mui/icons-material/Security';
 
 import familyImg from "@/assets/events/awards2.jpg";
 import PsMudzengi from "@/assets/gallery/mudzengi.jpg";
 
 const objectives = [
   {
-    icon: Target,
+    icon: TrackChangesIcon,
     title: "Develop Athletics",
     description: "Foster and develop athletics, including running and walking activities for all fitness levels.",
   },
   {
-    icon: Users,
+    icon: PeopleIcon,
     title: "Encourage Participation",
     description: "Encourage participation in local and international athletic events and competitions.",
   },
   {
-    icon: Share2,
+    icon: ShareIcon,
     title: "Share Knowledge",
     description: "Share knowledge, resources, and best practices among members to promote continuous improvement.",
   },
   {
-    icon: Shield,
+    icon: SecurityIcon,
     title: "Protect Interests",
     description: "Protect and promote the interests of our members within the athletics community.",
   },
@@ -74,7 +77,7 @@ const About = () => {
                   >
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl hero-gradient flex items-center justify-center flex-shrink-0">
-                        <obj.icon className="w-6 h-6 text-primary-foreground" />
+                        <obj.icon className="!w-6 !h-6 text-primary-foreground" />
                       </div>
                       <div>
                         <h3 className="font-display font-bold text-lg mb-2">{obj.title}</h3>

@@ -2,7 +2,9 @@ import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/layout/PageHero";
-import { Quote, ChevronDown, ChevronUp } from "lucide-react";
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import Ivenyakore from "@/assets/testimonials/makore.jpeg";
 import NicholasMangwende from "@/assets/testimonials/nicholasmangwende.jpeg";
 import NyashadzasheEGanje from "@/assets/testimonials/NyashadzasheEGanje.jpeg";
@@ -112,7 +114,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: any, index: numb
         </div>
       )}
       <div className="p-6 md:p-8 flex flex-col flex-grow">
-        <Quote className="w-8 h-8 text-primary/20 mb-4 flex-shrink-0" />
+        <FormatQuoteIcon className="!w-8 !h-8 text-primary/20 mb-4 flex-shrink-0" />
         <div className="flex-grow">
           <p className="text-foreground leading-relaxed mb-4 whitespace-pre-wrap">
             "{displayTestimony}"
@@ -123,9 +125,9 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: any, index: numb
               className="text-primary font-semibold text-sm hover:underline flex items-center gap-1 mb-6 transition-colors"
             >
               {isExpanded ? (
-                <>Read Less <ChevronUp className="w-4 h-4" /></>
+                <>Read Less <ExpandLessIcon className="!w-4 !h-4" /></>
               ) : (
-                <>Read More <ChevronDown className="w-4 h-4" /></>
+                <>Read More <ExpandMoreIcon className="!w-4 !h-4" /></>
               )}
             </button>
           )}

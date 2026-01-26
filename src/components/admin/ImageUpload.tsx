@@ -3,7 +3,10 @@ import { supabase } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Loader2, Upload, X, ImageIcon } from "lucide-react";
+import LoopIcon from '@mui/icons-material/Loop';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import CloseIcon from '@mui/icons-material/Close';
+import ImageIcon from '@mui/icons-material/Image';
 import { toast } from "sonner";
 
 interface ImageUploadProps {
@@ -81,7 +84,7 @@ export function ImageUpload({ value, onChange, bucket = "event-images" }: ImageU
                         onClick={clearImage}
                         className="absolute top-2 right-2 p-1.5 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors shadow-lg"
                     >
-                        <X className="w-4 h-4" />
+                        <CloseIcon className="!w-4 !h-4" />
                     </button>
                 </div>
             ) : (
@@ -91,9 +94,9 @@ export function ImageUpload({ value, onChange, bucket = "event-images" }: ImageU
                 >
                     <div className="p-3 rounded-full bg-slate-100 text-slate-400 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
                         {isUploading ? (
-                            <Loader2 className="w-6 h-6 animate-spin" />
+                            <LoopIcon className="!w-6 !h-6 animate-spin" />
                         ) : (
-                            <Upload className="w-6 h-6" />
+                            <CloudUploadIcon className="!w-6 !h-6" />
                         )}
                     </div>
                     <div className="text-center">

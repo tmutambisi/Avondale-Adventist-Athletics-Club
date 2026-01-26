@@ -22,7 +22,7 @@ const CTASection = () => {
             <Button variant="hero" size="xl" asChild>
               <Link to="/contact">Join the Club Today</Link>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild>
+            <Button variant="matisse" size="xl" asChild>
               <Link to="/about">Learn More</Link>
             </Button>
           </div>

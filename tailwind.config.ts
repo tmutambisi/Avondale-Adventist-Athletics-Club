@@ -69,6 +69,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        geebung: {
+          DEFAULT: "hsl(var(--geebung))",
+        },
+        matisse: {
+          DEFAULT: "hsl(var(--matisse))",
+        },
+        pearl: {
+          DEFAULT: "hsl(var(--pearl-bush))",
+        },
+        saffron: {
+          DEFAULT: "hsl(var(--saffron))",
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
